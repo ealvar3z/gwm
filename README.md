@@ -1,0 +1,2 @@
+# gwm
+go window manager
