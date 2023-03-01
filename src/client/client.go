@@ -1,9 +1,9 @@
 package client
 
 import (
-	t"
+	"fmt"
 
-	"github.com/jezek/xgb"
+	"github.com/jezek/xgbutil/xwindow"
 )
 
 type WorkSpaceError struct {
@@ -17,7 +17,7 @@ func (e WorkSpaceError) Error() string {
 }
 
 type Client struct {
-	Window     xgb.Window
+	Window     xwindow.Window
 	Workspace  WorkSpaceError
 	Visible    bool
 	Controlled bool

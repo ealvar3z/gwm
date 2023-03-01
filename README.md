@@ -1,4 +1,4 @@
-# gwm: go window manager
+# gwm: go window manager[WIP]
 
 My wm that is a work in progress. Completely inspired by the following post and
 video:

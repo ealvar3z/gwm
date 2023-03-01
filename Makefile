@@ -2,6 +2,7 @@ APP_NAME := gwm
 VERSION := $(shell cat VERSION)
 
 .PHONY: help build run docker-build docker-run clean
+all: help
 
 # Default target
 help:
@@ -17,7 +18,7 @@ help:
 
 # Build the binary
 build:
-	go build -o ./bin/$(APP_NAME) ./cmd
+	go build -o ./bin/$(APP_NAME) ./src
 
 # Run the binary
 run:
@@ -26,6 +27,7 @@ run:
 # Update our dependencies
 deps:
 	go mod download
+	go mod tidy
 
 # Clean up the binary and Docker image
 clean:

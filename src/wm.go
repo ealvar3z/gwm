@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os/exec"
 
@@ -47,7 +48,7 @@ func New() *WindowManager {
 	}
 }
 
-func (w *WindowManager) Run() {
+func (w *WindowManager) Run(ctx context.Context, sub *FmtSubscriber) {
 	screen := xwindow.New(w.conn, w.conn.Screen().Root)
 
 	xgbutil.EwmhSetSupported(w.conn, []string{
